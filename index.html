@@ -1,0 +1,89 @@
+<!--tell the browser this is an HTML file-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!--character encoding for the document-->
+    <meta charset="UTF-8"> 
+    <!--baseline desc of webpage-->
+    <meta name="description" content="JRNL 5500 Interactive Explanation Assignment, Spring 2025">
+    <!--keywords for the webpage-->
+    <meta name="keywords" content="digital storytelling, interactive design, learning, informative">
+    <!--contributors to the webpage-->
+    <meta name="author" content="Shreya Thalvayapati and Juliana George">
+    <!-- render differently on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- text that shows up in the browser tab -->
+    <title>Fashion Trends</title>
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- D3 Library -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Fashion Trends</h1>
+    </header>
+
+    <main>
+
+       <section id="intro">
+            <p>
+                In the age of fast-moving digital trends, it is easier to buy into viral moments but harder to 
+                cultivate a wardrobe that feels authentic. The rise of TikTok Shop has accelerated the trend 
+                cycle—one week, it’s all about clean-girl minimalism; the next, it's coquette bows and indie 
+                sleaze. While some sources of inspiration encourage creativity and longevity, others fuel 
+                impulsive, short-lived purchases.
+
+                With fashion shifting at breakneck speed, where are people actually finding their inspiration? 
+                And in a world of algorithm-driven style, is it still possible to develop a look that’s truly 
+                your own? Let’s take a closer look at how the trend cycle shapes our choices and what it really 
+                means to dress with intention in the digital age.
+            </p>
+        </section>
+
+        <section id="poll">
+            <h2>First, we want to hear from you—where do you pull style inspiration from?</h2>
+            <form id="poll-form">
+                <label><input type="radio" name="vote" value="daily_life"> People I see in my daily life</label><br>
+                <label><input type="radio" name="vote" value="blogs"> Fashion blogs or runways</label><br>
+                <label><input type="radio" name="vote" value="movies"> Movies and TV shows</label><br>
+                <label><input type="radio" name="vote" value="social_media"> Social media</label><br>
+                <br>
+                <!-- Ensure button is inside the form but is a standalone button -->
+                <button type="button" id="vote-button" onclick="submitVote()">Vote</button>
+            </form>
+            <br>
+            <div id="poll-results"></div>
+        </section>
+
+        <section id="images">
+            <h2>How Trends Shape Our Choices</h2>
+            <!-- Insert interactive elements like images, overlayed expandable buttons, etc. -->
+        </section>
+
+        <section id="conclusion">
+            <p>
+                In a world where trends are dictated by algorithms and the latest viral moment, not every source of 
+                inspiration encourages mindful consumption—some lead to fleeting purchases that don’t integrate well 
+                into a long-term wardrobe. The key to sustainable and intentional fashion isn’t about chasing every 
+                new aesthetic. Whether your style influences come from the streets, social media, runways, or film, 
+                what matters most is finding inspiration that truly resonates with you. Because at the end of the day, 
+                the best style isn’t just trendy—it’s timeless.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!--JavaScript File-->
+    <script src="script.js"></script>
+</body>
+
+</html>
