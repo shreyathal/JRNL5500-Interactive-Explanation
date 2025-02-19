@@ -63,21 +63,33 @@
         <section id="images">
             <p>Whether your style icon is Sandy Liang or Brigitte Bardot, your fashion sense is defined by who or what you're interacting with. Let's see how you feel about a few popular sources of inspiration to get a sense of what your algorithm may be feeding you.</p>
             <h2>Would you wear this?</h2>
-            <div class="image-container">
-                <img src="https://github.com/user-attachments/assets/1b51314f-7079-4394-b8a5-a12e61c9619f" alt="microtrends">
-                <button class="like">♡</button>
-                <button class="dislike">X</button>
-            </div>
-            <div id="hidden">
+            <img src="https://github.com/user-attachments/assets/1b51314f-7079-4394-b8a5-a12e61c9619f" alt="microtrends">
+            <ul id="picker-1">
+                <li data-like="yes" onclick="handleChoice(this)"><button>♡</button></li>
+                <li data-like="no" onclick="handleChoice(this)"><button>X</button></li>
+            </ul>
+            <div id="yes" hidden>
+                <h2>You might be a victim of microtrends!</h2>
                 <p>In the second half of 2023, this cropped "Brasil" baby tee was everywhere. A staple of the soccer-inspired "blokecore" aesthetic that started trending in 2022,  vintage jerseys have been selling for twice their value on reseller sites like Depop for a few years now. And after celebrities like Hailey Bieber, SZA, and Kali Uchis all posted photos wearing similar Brasil jerseys, it was only a matter of time before fast fashion retailers like Shein started mass-manufacturing a cheap alternative.</p>
                 <p>If they're your style, a jersey is a good staple to have that you can wear a lot of different ways. But if you're just buying one to follow a trend, you're less likely to invest in one that won't end up in a landfill after five or so wears. When drawing inspiration from social media trends, try to keep in mind the longevity of a piece and whether you'll still like it when the trend is through.</p>
             </div>
-            <div class="image-container">
-                <img src="https://github.com/user-attachments/assets/b1eacfec-b8f1-463c-bc25-fa8292e8440f" alt="carrie">
-                <button class="like">♡</button>
-                <button class="dislike">X</button>
+            <div id="no" hidden>
+                <h2>You're a conscious consumer!</h2>
+                <p>In the second half of 2023, this cropped "Brasil" baby tee was everywhere. A staple of the soccer-inspired "blokecore" aesthetic that started trending in 2022,  vintage jerseys have been selling for twice their value on reseller sites like Depop for a few years now. And after celebrities like Hailey Bieber, SZA, and Kali Uchis all posted photos wearing similar Brasil jerseys, it was only a matter of time before fast fashion retailers like Shein started mass-manufacturing a cheap alternative.</p>
+                <p>If they're your style, a jersey is a good staple to have that you can wear a lot of different ways. But if you're just buying one to follow a trend, you're less likely to invest in one that won't end up in a landfill after five or so wears. When drawing inspiration from social media trends, try to keep in mind the longevity of a piece and whether you'll still like it when the trend is through.</p>
             </div>
-            <div id="hidden">
+            <img src="https://github.com/user-attachments/assets/b1eacfec-b8f1-463c-bc25-fa8292e8440f" alt="carrie">
+            <ul id="picker-2">
+                <li data-like="yes" onclick="handleChoice(this)"><button>♡</button></li>
+                <li data-like="no" onclick="handleChoice(this)"><button>X</button></li>
+            </ul>
+            <div id="yes" hidden>
+                <h2>You're in good company!</h2>
+                <p>Carrie Bradshaw of "Sex and the City" has been a TV style icon ever since the show first aired in 1998. Although most of her looks were trendy around the time they aired, most fans would agree that they've largely stood the test of time.</p>
+                <p>When drawing inspiration from TV shows and film, you might think less about specific items and more about crafting a cohesive sense of style, like Carrie. However, if you love Carrie's style, don't splurge on a mink coat or a pair of snakeskin boots unless you think they'll fit into your wardrobe as well as they fit into hers.</p>
+            </div>
+            <div id="no" hidden>
+                <h2>Maybe you're more of a Charlotte.</h2>
                 <p>Carrie Bradshaw of "Sex and the City" has been a TV style icon ever since the show first aired in 1998. Although most of her looks were trendy around the time they aired, most fans would agree that they've largely stood the test of time.</p>
                 <p>When drawing inspiration from TV shows and film, you might think less about specific items and more about crafting a cohesive sense of style, like Carrie. However, if you love Carrie's style, don't splurge on a mink coat or a pair of snakeskin boots unless you think they'll fit into your wardrobe as well as they fit into hers.</p>
             </div>

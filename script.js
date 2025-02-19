@@ -231,8 +231,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 });
 
-d3.select(".like").on("click", function(){
-    let div = d3.select(".hidden");
-    let isHidden = div.classed("hidden");
-    div.classed ("hidden", !isHidden);
-})
+// microtrends question
+function handleChoice(chosenLikeElement){
+    d3.selectAll("div").style("display", "none");
+    const like = d3.select(chosenLikeElement).attr("data-like");
+    console.log(like);
+    d3.select("#"+like).style("display","block")
+}

@@ -11,3 +11,7 @@ button{
     height:4rem;
     width:4rem;
 }
+ul{
+    list-style-type:none;
+    display:flex
+  }
