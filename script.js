@@ -230,3 +230,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         displayPollForm();
     }
 });
+
+d3.select(".like").on("click", function(){
+    let div = d3.select(".hidden");
+    let isHidden = div.classed("hidden");
+    div.classed ("hidden", !isHidden);
+})

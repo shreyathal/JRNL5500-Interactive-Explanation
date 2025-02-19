@@ -1,0 +1,13 @@
+body {
+    margin: 0 auto;
+    max-width: 30rem
+}
+img {
+    max-width:100%;
+    height:auto
+}
+button{
+    border-radius:50%;
+    height:4rem;
+    width:4rem;
+}
