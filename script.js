@@ -232,8 +232,25 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 // microtrends question
-function handleChoice(chosenLikeElement){
-    d3.selectAll("div").style("display", "none");
+function handleChoice(chosenLikeElement, id){
+    d3.selectAll("." + id).style("display", "none");
+
+    /*if (id === 'q1') {
+        console.log('q1');
+        d3.selectAll(".q1").style("display", "none");
+    }
+    else if (id === 'q2') {
+        console.log('q2');
+        d3.selectAll(".q2").style("display", "none");
+    }*/
+    /*
+    switch(id) {
+        case 'q1':
+            d3.selectAll(".q1").style("display", "none");
+            break;
+    }
+    */
+
     const like = d3.select(chosenLikeElement).attr("data-like");
     console.log(like);
     d3.select("#"+like).style("display","block")
