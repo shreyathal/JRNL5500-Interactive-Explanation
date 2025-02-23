@@ -193,7 +193,7 @@ async function displayResults() {
     if (!results) {
         document.getElementById("poll").innerHTML = "<p>Error loading poll results.</p>";
         return;
-    }
+    };
 
     let totalVotes = Object.values(results).reduce((a, b) => a + b, 0);
 
@@ -209,7 +209,7 @@ async function displayResults() {
             </div>
         `;
     }
-}
+};
 
 // 🎯 Helper function to format names
 function formatOptionName(option) {
@@ -220,7 +220,7 @@ function formatOptionName(option) {
         social_media: "Social media"
     };
     return names[option];
-}
+};
 
 // 🎯 Load poll form or results when the page loads
 document.addEventListener("DOMContentLoaded", async function () {
@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 });
 
-// microtrends question
+// questions
 function handleChoice(chosenLikeElement, id){
     d3.selectAll("." + id).style("display", "none");
 
@@ -243,6 +243,7 @@ function handleChoice(chosenLikeElement, id){
         console.log('q2');
         d3.selectAll(".q2").style("display", "none");
     }*/
+
     /*
     switch(id) {
         case 'q1':
@@ -250,8 +251,53 @@ function handleChoice(chosenLikeElement, id){
             break;
     }
     */
-
     const like = d3.select(chosenLikeElement).attr("data-like");
     console.log(like);
-    d3.select("#"+like).style("display","block")
+    d3.select("#"+like).style("display","block");
+};
+
+//scrollto 
+function scrollDown(targetId) {
+    let targetElement = d3.select(`#${targetId}`).node();
+    if (targetElement) {
+      let elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      d3.transition()
+      .duration(500)
+      .tween ("scroll", function (){
+      let i = d3.interpolateNumber(window.scrollY,elementPosition);
+      return function (t){
+      window.scrollTo({ top:i(t), behavior:'auto'});
+      };
+      });
+    }
+  }
+
+//scrollto
+/* function scrollDown (id){
+    if (id === 'q1'){
+        console.log('q1');
+        window.scrollTo(0,1300);
+    }
+    else if (id === 'q2'){
+        console.log ('q2');
+        window.scrollTo(0, 2160)
+    }
+    else if (id === 'q3'){
+        console.log('q3');
+        window.scrollTo(0,3050)
+    }
+    else if (id === 'q4'){
+        console.log('q4');
+        window.scrollTo(0,3910)
+    }
+}*/
+
+//button recolor
+function recolor (clickedElement){
+    d3.selectAll("button").style("background-color","gray");
+    let button = clickedElement.querySelector("button");
+    if (button){
+   let desiredColor = clickedElement.getAttribute("data-color");
+   d3.select(button).style("background-color", desiredColor)
+    }
 }
