@@ -14,6 +14,7 @@
     }
     .background{
         max-width:100%;
+        height:auto;
         visibility:hidden;
         position:fixed;
         top:0;
@@ -49,6 +50,7 @@ img {
 }
 .background{
     max-width:100%;
+    height:auto;
     visibility:hidden;
     position:fixed;
     top:0;
@@ -70,6 +72,7 @@ header p{
 @media only screen and (min-width:1200px){
     .background{
         max-width:100%;
+        height:auto;
         position:fixed;
         top:0;
         left:0;
