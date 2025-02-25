@@ -72,19 +72,19 @@ async function submitVote() {
 
 
 // 🎯 Function to display the poll form
-function displayPollForm() {
-    document.getElementById("poll").innerHTML = `
-        <h2>First, we want to hear from you—where do you pull style inspiration from?</h2>
-        <form id="poll-form">
-            <label><input type="radio" name="vote" value="daily_life"> People I see in my daily life</label><br>
-            <label><input type="radio" name="vote" value="blogs"> Fashion blogs or runways</label><br>
-            <label><input type="radio" name="vote" value="movies"> Movies and TV shows</label><br>
-            <label><input type="radio" name="vote" value="social_media"> Social media</label><br>
-            <br>
-            <button type="button" id="vote-button" onclick="submitVote()">Vote</button>
-        </form>
-    `;
-}
+// function displayPollForm() {
+//     document.getElementById("poll").innerHTML = `
+//         <h2>First, we want to hear from you—where do you pull style inspiration from?</h2>
+//         <form id="poll-form">
+//             <label><input type="radio" name="vote" value="daily_life"> People I see in my daily life</label><br>
+//             <label><input type="radio" name="vote" value="blogs"> Fashion blogs or runways</label><br>
+//             <label><input type="radio" name="vote" value="movies"> Movies and TV shows</label><br>
+//             <label><input type="radio" name="vote" value="social_media"> Social media</label><br>
+//             <br>
+//             <button type="button" id="vote-button" onclick="submitVote()">Vote</button>
+//         </form>
+//     `;
+// }
 
 async function displayResults() {
     let pollOutput = document.getElementById("poll-output");
