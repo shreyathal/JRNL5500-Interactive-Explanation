@@ -156,7 +156,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 });
 
-
 // questions
 function handleChoice(chosenLikeElement, id){
     d3.selectAll("." + id).style("display", "none");
@@ -182,8 +181,9 @@ function scrollDown(targetId) {
   }
 
 //button recolor
-function recolor (clickedElement){
-    d3.selectAll("button").style("background-color","gray");
+function recolor (clickedElement, id){
+    let parentUl = clickedElement.closest ("ul");
+    d3.select(parentUl).selectAll("button").style("background-color", "#9E76B4");
     let button = clickedElement.querySelector("button");
     if (button){
    let desiredColor = clickedElement.getAttribute("data-color");
