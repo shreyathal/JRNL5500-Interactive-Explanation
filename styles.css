@@ -1,8 +1,9 @@
 @media only screen and (max-width:550px){
     body{
         margin: 0 auto;
-        max-width: 20rem;
-        overflow-y:auto
+        max-width:20rem;
+        overflow-y:auto;
+        background-color:#c5a0c9
     }
     img{
         max-width: 100%;
@@ -11,30 +12,34 @@
         margin-left: auto;
         margin-right:auto
     }
-    button{
-        border-radius:50%;
-        height:4rem;
-        width:4rem;
-        color: white;
-        background-color:gray
+    .background{
+        max-width:100%;
+        height:auto;
+        visibility:hidden;
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index:-1;
     }
-    ul{
-        list-style-type:none;
-        display:flex
-      }
     h1{
-        text-align:center
+        text-align:center;
+        font-family:'Press Start 2P';
+        line-height: 2.5rem;
+        width: 20rem
     }
-    h2{
-        text-align:center
+    header p{
+        font-size: 1.5rem;
+        text-align:center;
+        width:20rem
     }
 }
-
-@media only screen and (min-width:551px){
+@media only screen and (min-width:551px) and (max-width:1199px){
 body {
     margin: 0 auto;
-    max-width: 30rem;
-    overflow-y:auto
+    overflow-y:auto;
+    background-color:#c5a0c9;
+    max-width: 30rem
 }
 img {
     max-width:80%;
@@ -43,23 +48,127 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+.background{
+    max-width:100%;
+    height:auto;
+    visibility:hidden;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:-1;
+}
+h1{
+    text-align:center;
+    font-family:'Press Start 2P';
+    line-height: 2.5rem;
+    width: 30rem;
+}
+header p{
+    font-size: 1.5rem;
+    text-align:center;
+}
+}
+@media only screen and (min-width:1200px){
+    .background{
+        max-width:100%;
+        height:auto;
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index:-1;
+    }
+    body {
+        margin: 0 auto;
+        overflow-y:auto;
+        background-color:#c5a0c9
+    }
+    main{
+        margin: 0 auto;
+        max-width: 30rem
+    }
+    img {
+        max-width:80%;
+        height:auto;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        border:0
+    }
+    h1{
+        text-align:center;
+        font-family:'Press Start 2P';
+        line-height: 2.5rem;
+        width: 30rem
+    }
+    header p{
+        font-size: 1.5rem;
+        text-align:center;
+        width:30rem
+    }
+    }
+header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    height:100vh;
+    gap:1rem;
+}
+section{
+    padding-top:1rem;
+    padding-bottom:1rem
+}
 button{
-    border-radius:50%;
-    height:4rem;
-    width:4rem;
-    color: white;
-    background-color:gray
+    height: 3rem;
+    width:6rem;
+    color: black;
+    font-size: 1rem;
+    font-family: 'Press Start 2P';
+    background-color:#9E76B4;
+    box-shadow: -0.25rem 0.25rem black, -.12rem .12rem black, -.06rem .06rem black;
+    border: 0.06rem solid black;
 }
 ul{
     list-style-type:none;
-    display:flex
+    padding: 0;
+    display:flex; 
+    justify-content: center;
+    gap: 5rem;
+    padding-bottom: 1rem
   }
-h1{
-    text-align:center
-}
 h2{
-    text-align:center
+    text-align:center;
+    font-family: 'Press Start 2P'
 }
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:1.3rem;
+    text-align:center;
+    margin-top:0
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.75rem
+}
+.q1{
+    padding-bottom:1rem;
+    padding-top:1rem
+}
+.q2{
+    padding-bottom:1rem;
+    padding-top:1rem
+}
+.q3{
+    padding-bottom:1rem;
+    padding-top:1rem
+}
+.q4{
+    padding-bottom:1rem;
+    padding-top:1rem
 }
 
 /* Spinner Styling */
