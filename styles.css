@@ -204,7 +204,23 @@ p{
 #poll-results {
     text-align: center;
 }
+
+#poll-results h2 {
+    margin-bottom: 70px; /* Increase space below the heading */
+}
+
 #poll-form{
     font-size: 1.2rem;
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif; 
+}
+
+/* Add spacing between poll choices */
+#poll-form label {
+    display: block;  /* Ensures each choice appears on a new line */
+    margin-bottom: 5px; /* Increase space between choices */
+}
+
+/* Add spacing between poll result bars */
+#poll-output div {
+    margin-bottom: 100 px; /* Increase space between bars */
 }

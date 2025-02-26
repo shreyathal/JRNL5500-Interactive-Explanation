@@ -70,22 +70,6 @@ async function submitVote() {
     await displayResults();
 }
 
-
-// 🎯 Function to display the poll form
-// function displayPollForm() {
-//     document.getElementById("poll").innerHTML = `
-//         <h2>First, we want to hear from you—where do you pull style inspiration from?</h2>
-//         <form id="poll-form">
-//             <label><input type="radio" name="vote" value="daily_life"> People I see in my daily life</label><br>
-//             <label><input type="radio" name="vote" value="blogs"> Fashion blogs or runways</label><br>
-//             <label><input type="radio" name="vote" value="movies"> Movies and TV shows</label><br>
-//             <label><input type="radio" name="vote" value="social_media"> Social media</label><br>
-//             <br>
-//             <button type="button" id="vote-button" onclick="submitVote()">Vote</button>
-//         </form>
-//     `;
-// }
-
 async function displayResults() {
     let pollOutput = document.getElementById("poll-output");
 
@@ -101,36 +85,50 @@ async function displayResults() {
     let totalVotes = Object.values(results).reduce((a, b) => a + b, 0);
     let resultsHTML = "";
 
-    for (let option in results) {
-        let percentage = totalVotes > 0 ? ((results[option] / totalVotes) * 100).toFixed(2) : 0;
+    // Step 1: Compute raw percentages and initial rounding
+    let roundedPercentages = {};
+    let sum = 0;
+    let lastKey = null;
 
-        // 🛑 If this option matches the user's vote, add checkmarks & special text
+    Object.keys(results).forEach((option, index, array) => {
+        let raw = (results[option] / totalVotes) * 100;
+        let rounded = Math.round(raw);
+        roundedPercentages[option] = rounded;
+        sum += rounded;
+        lastKey = option; // Track the last option to adjust later
+    });
+
+    // Step 2: Adjust the last value to ensure total = 100%
+    let difference = 100 - sum;
+    roundedPercentages[lastKey] += difference;
+
+    // Step 3: Display results
+    Object.keys(results).forEach(option => {
+        let percentage = roundedPercentages[option];
+
+        // If this option matches the user's vote, add checkmarks
         if (option === userVote) {
             resultsHTML += `
-                <p style="font-weight: bold; color: #2E7D32;">
+                <p style="font-weight: bold; font-size: 1.5rem; color: #006B6B;">
                     ✔ ${formatOptionName(option)}: <strong>${percentage}%</strong> ✔
                 </p>
-                <p style="font-size: 14px; color: gray;">(You voted for this!)</p>
-            `;
+            `; 
         } else {
             resultsHTML += `
                 <p>${formatOptionName(option)}: <strong>${percentage}%</strong></p>
             `;
         }
 
-        // Progress bar styling remains the same
         resultsHTML += `
-            <div style="background:#ccc; width:100%; height:20px; margin-bottom:10px;">
-                <div style="background:#4CAF50; width:${percentage}%; height:20px;"></div>
+            <div style="background:#ccc; width:100%; height:20px; margin-bottom:70px; padding: 5px; border-radius: 5px;">
+                <div style="background:#006B6B; width:${percentage}%; height:20px; border-radius: 5px;"></div>
             </div>
         `;
-    }
+    });
 
     // Show poll results
     pollOutput.innerHTML = resultsHTML;
 }
-
-
 
 // 🎯 Helper function to format names
 function formatOptionName(option) {
