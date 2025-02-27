@@ -247,7 +247,7 @@ a{
 }
 
 #poll-results h2 {
-    margin-bottom: 70px; /* Increase space below the heading */
+    margin-bottom: 40px; /* Increase space below the heading */
 }
 
 #poll-form{
@@ -258,10 +258,20 @@ a{
 /* Add spacing between poll choices */
 #poll-form label {
     display: block;  /* Ensures each choice appears on a new line */
-    margin-bottom: 5px; /* Increase space between choices */
+    margin-bottom: 1px; /* Increase space between choices */
 }
 
-/* Add spacing between poll result bars */
-#poll-output div {
-    margin-bottom: 100 px; /* Increase space between bars */
+/* Improve focus indicators for accessibility */
+button, input[type="radio"], a {
+    outline: none; /* Remove default focus */
+}
+
+button:focus-visible, input[type="radio"]:focus-visible, a:focus-visible {
+    outline: 3px solid #FFD700; /* Bright gold focus outline */
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+#poll-results:focus {
+    outline: none;
 }

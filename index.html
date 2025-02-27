@@ -48,19 +48,38 @@
                 trends influence our choices—and what it really means to dress with intention in the digital age. </p>
 
         </section>
+    
 
-        <!-- Poll Form (Visible Initially) -->
+        <!-- Poll Form (Fully Accessible & Clean) -->
         <section id="poll">
-            <h2>First, we want to hear from you — where do you pull style inspiration from?</h2>
-            <form id="poll-form">
-                <label><input type="radio" name="vote" value="daily_life"> People I see in daily life</label><br>
-                <label><input type="radio" name="vote" value="blogs"> Fashion blogs or runways</label><br>
-                <label><input type="radio" name="vote" value="movies"> Movies and TV shows</label><br>
-                <label><input type="radio" name="vote" value="social_media"> Social media</label><br>
+            <h2 id="poll-question">First, we want to hear from you — where do you pull style inspiration from?</h2>
+            <form id="poll-form" role="radiogroup" aria-labelledby="poll-question">
+                <label for="daily_life">
+                    <input type="radio" id="daily_life" name="vote" value="daily_life"> 
+                    People I see in daily life
+                </label><br>
+
+                <label for="blogs">
+                    <input type="radio" id="blogs" name="vote" value="blogs"> 
+                    Fashion blogs or runways
+                </label><br>
+
+                <label for="movies">
+                    <input type="radio" id="movies" name="vote" value="movies"> 
+                    Movies and TV shows
+                </label><br>
+
+                <label for="social_media">
+                    <input type="radio" id="social_media" name="vote" value="social_media"> 
+                    Social media
+                </label><br>
+
                 <br>
                 <button type="button" id="vote-button" onclick="submitVote()">Vote</button>
             </form>
         </section>
+
+
 
         <!-- Loading Spinner (Hidden Initially) -->
         <section id="loading" style="display: none;">
@@ -68,17 +87,24 @@
             <p>Loading results...</p>
         </section>
 
-        <!-- Poll Results (Hidden Initially) -->
+        <!-- Poll Results (Hidden Initially)
         <section id="poll-results" style="display: none;">
             <h2>Results of the Poll:</h2>
             <div id="poll-output"></div>
+        </section> -->
+
+        <!-- Poll Results (Accessible) -->
+        <section id="poll-results" style="display: none;" role="region" aria-live="polite" aria-labelledby="poll-results-heading">
+            <h2 id="poll-results-heading">Results of the Poll:</h2>
+            <div id="poll-output"></div>
         </section>
 
-    <section id="transition">
-        <p>Whether your style icon is Sandy Liang or Brigitte Bardot, the way you dress is influenced by the 
-            people and media you interact with. Let's explore a few popular sources of inspiration to get a 
-            sense of what might be shaping your personal style.</p>
-    </section>
+
+        <section id="transition">
+            <p>Whether your style icon is Sandy Liang or Brigitte Bardot, the way you dress is influenced by the 
+                people and media you interact with. Let's explore a few popular sources of inspiration to get a 
+                sense of what might be shaping your personal style.</p>
+        </section>
 
         <section id="images">
             <div class="image-container">
@@ -251,7 +277,6 @@
             <h2>What does this all mean?</h2>
             
             <p> In a world where trends are dictated by algorithms and viral moments, 
-                not every source of inspiration encourages mindful consumption. Some lead to fleeting
                 purchases that don't integrate well into a long-term wardrobe. </p>
 
             <p>The key to sustainable and intentional fashion isn't about chasing every new aesthetic.

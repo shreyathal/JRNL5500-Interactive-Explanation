@@ -63,11 +63,24 @@ async function submitVote() {
     });
 
     // Hide spinner and show results
+    // document.getElementById("loading").style.display = "none";
+    // document.getElementById("poll-results").style.display = "block";
+
+    // Show updated results
+    // await displayResults();
+
+    // Hide spinner and show results
     document.getElementById("loading").style.display = "none";
-    document.getElementById("poll-results").style.display = "block";
+    const pollResults = document.getElementById("poll-results");
+    pollResults.style.display = "block";
+
+    // Move focus to results for keyboard users
+    pollResults.setAttribute("tabindex", "-1"); // Make it focusable
+    pollResults.focus(); // Move focus to results
 
     // Show updated results
     await displayResults();
+
 }
 
 async function displayResults() {
@@ -106,22 +119,22 @@ async function displayResults() {
     Object.keys(results).forEach(option => {
         let percentage = roundedPercentages[option];
 
-        // If this option matches the user's vote, add checkmarks
-        if (option === userVote) {
-            resultsHTML += `
-                <p style="font-weight: bold; font-size: 1.5rem; color: #006B6B;">
-                    ✔ ${formatOptionName(option)}: <strong>${percentage}%</strong> ✔
-                </p>
-            `; 
-        } else {
-            resultsHTML += `
-                <p>${formatOptionName(option)}: <strong>${percentage}%</strong></p>
-            `;
-        }
-
         resultsHTML += `
-            <div style="background:#ccc; width:100%; height:20px; margin-bottom:70px; padding: 5px; border-radius: 5px;">
-                <div style="background:#006B6B; width:${percentage}%; height:20px; border-radius: 5px;"></div>
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
+            <p style="margin-bottom: 5px; font-weight: bold; 
+                  font-size: ${option === userVote ? "1.5rem" : "1.2rem"}; 
+                  color: ${option === userVote ? "#006B6B" : "black"};">
+                ${option === userVote ? "✔ " : ""}${formatOptionName(option)}: 
+                <strong>${percentage}%</strong>${option === userVote ? " ✔" : ""}
+            </p>
+            <div role="progressbar" 
+                aria-labelledby="result-${option}" 
+                aria-valuenow="${percentage}" 
+                aria-valuemin="0" 
+                aria-valuemax="100"
+                style="background:#ccc; width:100%; height:25px; border-radius: 5px; position: relative;">
+                <div style="background:#006B6B; width:${percentage}%; height:25px; border-radius: 5px;"></div>
+            </div>
             </div>
         `;
     });
