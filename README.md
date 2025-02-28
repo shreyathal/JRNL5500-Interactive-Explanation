@@ -1,5 +1,7 @@
 # JRNL5500-Interactive-Explanation
 This story was developed by Juliana George and Shreya Thalvayapati at Northeastern University for JRNL 5500: Coding for Storytelling. 
+
+
 <img width="441" alt="tory burch" src="https://github.com/user-attachments/assets/0d43301a-f84c-40d4-a2b5-3282dc7732c4"/>
 <img width="533" alt="street-style" src="https://github.com/user-attachments/assets/5f57e85d-ebec-45e9-be2e-70196f68e255" />
 <img width="488" alt="carrie" src="https://github.com/user-attachments/assets/b1eacfec-b8f1-463c-bc25-fa8292e8440f" />
